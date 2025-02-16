@@ -1,0 +1,20 @@
+name: macOS Cloud PC
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - name: Kodni yuklash
+      uses: actions/checkout@v3
+
+    - name: Xavfsizlik ruxsatlarini o'rnatish
+      run: chmod +x script.sh
+
+    - name: Skriptni ishga tushirish
+      run: ./script.sh
